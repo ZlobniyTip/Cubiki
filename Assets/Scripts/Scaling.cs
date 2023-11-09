@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 
-public class Capsule : MonoBehaviour
+public class Scaling : MonoBehaviour
 {
     [SerializeField] private float _scaleChange;
 
-    private Vector3 _scale;
+    private Vector3 _scaleAllAxes;
     private Vector3 _maxScale;
 
     private void Start()
     {
-        _scale = new Vector3(_scaleChange, _scaleChange, _scaleChange);
+        _scaleAllAxes = new Vector3(_scaleChange, _scaleChange, _scaleChange);
         _maxScale = new Vector3(4, 4, 4);
     }
 
@@ -20,7 +17,7 @@ public class Capsule : MonoBehaviour
     {
         if (transform.localScale.x < _maxScale.x)
         {
-            transform.localScale += _scale;
+            transform.localScale += _scaleAllAxes;
         }
     }
 }
